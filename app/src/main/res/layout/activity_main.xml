@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="tomerbu.edu.transitionsdemo.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -15,8 +14,8 @@
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
 
             <ImageView
@@ -24,21 +23,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
+                android:contentDescription="@string/header"
                 android:paddingTop="50dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/food"
-                />
+                android:src="@drawable/food" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
-                app:layout_scrollFlags="enterAlwaysCollapsed"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:layout_collapseMode="pin"
-
+                app:layout_scrollFlags="enterAlwaysCollapsed"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
-
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -48,12 +45,25 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
+        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_anchor="@+id/appbar"
-        app:layout_anchorGravity="bottom|right"
         android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_share_white_24dp"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="bottom|right" />
 
-        android:src="@drawable/ic_share_white_24dp" />
+    <android.support.design.widget.FloatingActionButton
 
+        app:layout_behavior=".FabScrollBehaviour"
+        android:id="@+id/fabAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:clickable="true"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        app:layout_anchor="@+id/recycler"
+        app:layout_anchorGravity="bottom|end"
+        android:src="@drawable/ic_add_white_24dp" />
 </android.support.design.widget.CoordinatorLayout>
