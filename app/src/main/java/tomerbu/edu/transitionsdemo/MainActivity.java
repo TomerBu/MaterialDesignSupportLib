@@ -1,6 +1,7 @@
 package tomerbu.edu.transitionsdemo;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         RecyclerView rv = (RecyclerView) findViewById(R.id.recycler);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+
         rv.setAdapter(new MyRecyclerAdapter(this));
     }
 
